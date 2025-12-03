@@ -174,7 +174,7 @@ const PremiumEdTechHero = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-alcovia-black"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-alcovia-black"
       style={{ perspective: '1000px' }}
     >
       {/* Soft Animated Background Shapes */}
@@ -347,8 +347,10 @@ const PremiumEdTechHero = () => {
 
       {/* Mid Layer - Product UI Card */}
       <motion.div
-        className="mid-layer-card absolute right-10 lg:right-20 top-1/2 -translate-y-1/2 z-20 hidden lg:block"
+        className="mid-layer-card absolute top-1/2 -translate-y-1/2 z-20 hidden lg:block"
         style={{
+          right: 'clamp(0.5rem, 1.5rem, max(1.5rem, calc(100vw - 26rem)))',
+          maxWidth: 'min(24rem, calc(100vw - 4rem))',
           x: midLayerX,
           y: midLayerY,
           rotateX,
@@ -365,7 +367,7 @@ const PremiumEdTechHero = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-alcovia-orange/30 to-alcovia-red/30 rounded-3xl blur-2xl" />
           
           {/* Enhanced UI Card */}
-          <div className="relative w-80 xl:w-96 p-8 rounded-3xl border-2 border-alcovia-orange/40 bg-gradient-to-br from-alcovia-darker/80 via-alcovia-black/60 to-alcovia-darker/80 backdrop-blur-xl overflow-hidden">
+          <div className="relative w-72 sm:w-80 xl:w-96 max-w-[min(24rem,calc(100vw-4rem))] p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border-2 border-alcovia-orange/40 bg-gradient-to-br from-alcovia-darker/80 via-alcovia-black/60 to-alcovia-darker/80 backdrop-blur-xl overflow-hidden">
             {/* Animated Background Pattern */}
             <motion.div
               className="absolute inset-0 opacity-10"
@@ -530,7 +532,7 @@ const PremiumEdTechHero = () => {
           transformStyle: 'preserve-3d',
         }}
       >
-        <div className="relative max-w-7xl mx-auto px-6 flex justify-center items-end">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-end">
           {/* Laptop glow effect behind student */}
           <motion.div
             className="laptop-glow absolute bottom-20 left-1/2 -translate-x-1/2 w-60 h-60 rounded-full blur-3xl"
@@ -550,7 +552,7 @@ const PremiumEdTechHero = () => {
 
           {/* Student with Laptop SVG Illustration */}
           <motion.div
-            className="relative w-[300px] h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]"
+            className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]"
             initial={{ opacity: 0, y: 50, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.5, duration: 1.2, ease: "backOut" }}
@@ -626,7 +628,7 @@ const PremiumEdTechHero = () => {
           
           {/* Social Proof Stats Below Student */}
           <motion.div
-            className="mt-8 flex flex-col items-center justify-center gap-4"
+            className="mt-responsive flex flex-col items-center justify-center gap-responsive"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.5 }}
@@ -636,11 +638,11 @@ const PremiumEdTechHero = () => {
               { label: '50+', sublabel: 'Mentors' },
               { label: '95%', sublabel: 'Success Rate' },
             ].map((stat, i) => (
-              <div key={i} className="text-center p-3 rounded-xl bg-alcovia-black/70 backdrop-blur-md border border-alcovia-orange/30">
-                <div className="text-2xl md:text-3xl font-display font-bold text-white drop-shadow-lg">
+              <div key={i} className="text-center p-3 sm:p-4 rounded-xl bg-alcovia-black/70 backdrop-blur-md border border-alcovia-orange/30">
+                <div className="text-responsive-2xl font-display font-bold text-white drop-shadow-lg">
                   {stat.label}
                 </div>
-                <div className="text-xs text-alcovia-orange font-semibold">{stat.sublabel}</div>
+                <div className="text-responsive-xs text-alcovia-orange font-semibold">{stat.sublabel}</div>
               </div>
             ))}
           </motion.div>
@@ -649,7 +651,7 @@ const PremiumEdTechHero = () => {
 
       {/* Hero Content - Center */}
       <motion.div
-        className="relative z-40 text-center px-6 max-w-5xl mx-auto pt-32 pb-32"
+        className="relative z-40 text-center px-4 sm:px-6 w-full max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
         style={{
           rotateX: useTransform(rotateX, (val) => val / 3),
           rotateY: useTransform(rotateY, (val) => val / 3),
@@ -661,14 +663,14 @@ const PremiumEdTechHero = () => {
           className="hero-mask-left inline-flex items-center gap-2 px-4 py-2 rounded-full bg-alcovia-darker/60 backdrop-blur-md border border-alcovia-orange/30 mb-6"
         >
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-primary font-body text-sm tracking-wide">
+          <span className="text-primary font-body text-xs sm:text-sm tracking-wide">
             Trusted by 10,000+ Students Worldwide
           </span>
         </motion.div>
 
         {/* Headline with split animation */}
-        <div className="hero-headline mb-8 overflow-hidden">
-          <h1 className="hero-text text-5xl md:text-7xl lg:text-8xl xl:text-9xl">
+        <div className="hero-headline mb-responsive overflow-hidden">
+          <h1 className="hero-text">
             {['Build', 'Your', 'Future,'].map((word, i) => (
               <span key={i} className="inline-block mr-4 md:mr-6">
                 <span className="text-foreground">{word}</span>
@@ -685,7 +687,7 @@ const PremiumEdTechHero = () => {
 
         {/* Subheadline */}
         <motion.p
-          className="hero-subheadline text-muted-foreground text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto mb-12 font-body leading-relaxed"
+          className="hero-subheadline text-muted-foreground text-responsive-lg max-w-4xl mx-auto mb-responsive font-body leading-relaxed"
         >
           Join Alcovia&apos;s transformative learning journey. Get personalized mentorship from 
           Harvard &amp; UCL professionals, build real-world skills, and connect with driven peers 
@@ -693,7 +695,7 @@ const PremiumEdTechHero = () => {
         </motion.p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-responsive justify-center items-center mb-responsive">
           <motion.button
             className="hero-cta btn-primary group relative overflow-hidden"
             whileHover={{ scale: 1.05, y: -2, rotateX: 5 }}

@@ -100,6 +100,9 @@
     cursor: none !important;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
   }
 
   * {
@@ -143,9 +146,65 @@
     box-shadow: var(--shadow-glow);
   }
 
+  /* Fix for navbar and sticky button overlap at all zoom levels */
+  nav {
+    max-width: calc(100vw - 2rem) !important;
+    overflow: visible !important;
+  }
+
+  /* Ensure Book Demo button doesn't overlap navbar */
+  .book-demo-button {
+    z-index: 100 !important;
+  }
+
+  /* Learning Progress card responsive positioning */
+  .mid-layer-card {
+    max-width: min(24rem, calc(100vw - 4rem)) !important;
+  }
+
+  /* Prevent navbar buttons from overlapping - responsive gaps */
+  nav .flex.items-center {
+    gap: clamp(0.25rem, 0.5rem, 1rem) !important;
+    min-width: 0 !important;
+  }
+
+  /* Responsive text sizing for navbar */
+  nav a, nav button {
+    white-space: nowrap;
+  }
+
+  /* Ensure theme toggle is always visible */
+  nav button[aria-label="Toggle theme"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+  }
+
+  /* Book Demo button alignment - ensure it aligns with navbar right edge */
+  .book-demo-button {
+    right: 1rem !important;
+  }
+  
+  /* Ensure Book Demo doesn't overlap navbar on any screen size */
+  @media (max-width: 640px) {
+    .book-demo-button {
+      right: 0.75rem !important;
+      top: auto !important;
+    }
+  }
+
+  /* Responsive navbar padding to prevent overlap */
+  @media (max-width: 1024px) {
+    nav .flex.items-center.justify-between {
+      padding-right: clamp(0.5rem, 1rem, 2rem) !important;
+    }
+  }
+
   .hero-text {
     font-family: var(--font-display);
     @apply font-extrabold uppercase tracking-tight leading-none;
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl;
   }
 
   .manifesto-text {
@@ -160,9 +219,11 @@
   }
 
   .btn-primary {
-    @apply bg-gradient-to-r from-alcovia-orange via-alcovia-red to-alcovia-deep-orange font-semibold px-8 py-4 rounded-full;
+    @apply bg-gradient-to-r from-alcovia-orange via-alcovia-red to-alcovia-deep-orange font-semibold rounded-full;
+    @apply px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4;
+    @apply text-sm sm:text-base;
     @apply transition-all duration-300 ease-out;
-    @apply hover:scale-110 hover:shadow-[0_0_50px_hsl(45_100%_55%_/_0.6),0_0_80px_hsl(0_60%_35%_/_0.4)];
+    @apply hover:scale-105 sm:hover:scale-110 hover:shadow-[0_0_50px_hsl(45_100%_55%_/_0.6),0_0_80px_hsl(0_60%_35%_/_0.4)];
     color: hsl(0 0% 10%);
     background-size: 200% 200%;
     animation: gradient-flow 3s ease infinite;
@@ -174,7 +235,9 @@
   }
 
   .btn-outline {
-    @apply border-2 border-primary text-primary font-semibold px-8 py-4 rounded-full;
+    @apply border-2 border-primary text-primary font-semibold rounded-full;
+    @apply px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4;
+    @apply text-sm sm:text-base;
     @apply transition-all duration-300 ease-out;
     @apply hover:bg-primary hover:text-primary-foreground;
   }
@@ -183,10 +246,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 1;
     opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
@@ -195,6 +258,40 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Responsive Container */
+  .container-responsive {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Responsive Text Sizes */
+  .text-responsive-xs { @apply text-xs sm:text-sm; }
+  .text-responsive-sm { @apply text-sm sm:text-base; }
+  .text-responsive-base { @apply text-base sm:text-lg; }
+  .text-responsive-lg { @apply text-lg sm:text-xl lg:text-2xl; }
+  .text-responsive-xl { @apply text-xl sm:text-2xl lg:text-3xl; }
+  .text-responsive-2xl { @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl; }
+  .text-responsive-3xl { @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl; }
+  .text-responsive-4xl { @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl; }
+  .text-responsive-5xl { @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl; }
+
+  /* Responsive Spacing */
+  .py-responsive { @apply py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24; }
+  .px-responsive { @apply px-4 sm:px-6 lg:px-8; }
+  .gap-responsive { @apply gap-4 sm:gap-6 lg:gap-8; }
+  .mb-responsive { @apply mb-6 sm:mb-8 lg:mb-12; }
+  .mt-responsive { @apply mt-6 sm:mt-8 lg:mt-12; }
+
+  /* Mobile-First Grid */
+  .grid-responsive-2 { @apply grid grid-cols-1 sm:grid-cols-2; }
+  .grid-responsive-3 { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3; }
+  .grid-responsive-4 { @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4; }
+
+  /* Responsive Buttons */
+  .btn-responsive {
+    @apply px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4;
+    @apply text-sm sm:text-base;
   }
 
   .animate-float {

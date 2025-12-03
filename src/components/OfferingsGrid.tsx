@@ -106,7 +106,7 @@ const OfferingsGrid = () => {
   }, [selectedCard]);
 
   return (
-    <section ref={sectionRef} className="relative py-32 md:py-48 overflow-hidden">
+    <section ref={sectionRef} className="relative py-responsive overflow-hidden">
       {/* Background with animated gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-alcovia-dark via-alcovia-black to-alcovia-darker" />
       
@@ -145,7 +145,7 @@ const OfferingsGrid = () => {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-responsive">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -159,7 +159,7 @@ const OfferingsGrid = () => {
           >
             What We Offer
           </motion.span>
-          <h2 className="hero-text text-4xl md:text-6xl lg:text-7xl">
+          <h2 className="hero-text text-responsive-4xl">
             <span className="text-foreground">The </span>
             <span className="text-gradient">Alcovia</span>
             <span className="text-foreground"> Experience</span>
@@ -172,7 +172,7 @@ const OfferingsGrid = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid-responsive-3 gap-responsive"
         >
           {offerings.map((item, index) => (
             <motion.div
@@ -199,7 +199,7 @@ const OfferingsGrid = () => {
               onClick={() => setSelectedCard(selectedCard === index ? null : index)}
               onMouseEnter={() => setSelectedCard(index)}
               onMouseLeave={() => setSelectedCard(null)}
-              className="group relative p-8 rounded-3xl bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border-2 border-alcovia-orange/30 hover:border-alcovia-orange/60 transition-all duration-500 overflow-hidden cursor-pointer"
+              className="group relative p-4 sm:p-6 lg:p-8 rounded-3xl bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl border-2 border-alcovia-orange/30 hover:border-alcovia-orange/60 transition-all duration-500 overflow-hidden cursor-pointer"
               style={{
                 boxShadow: selectedCard === index 
                   ? '0 40px 100px -10px hsl(0 0% 0% / 0.8), 0 0 80px hsl(45 100% 55% / 0.4)' 

@@ -9,7 +9,7 @@ import InteractiveBackground from '@/components/InteractiveBackground';
 import LoadingScreen from '@/components/LoadingScreen';
 import Navbar from '@/components/Navbar';
 import PremiumEdTechHero from '@/components/PremiumEdTechHero';
-import StickyBookDemo from '@/components/StickyBookDemo';
+
 import ManifestoSection from '@/components/ManifestoSection';
 import OfferingsGrid from '@/components/OfferingsGrid';
 import SchoolToggle from '@/components/SchoolToggle';
@@ -55,8 +55,7 @@ const Index = () => {
             {/* Navigation */}
             <Navbar />
             
-            {/* Sticky Book Demo CTA */}
-            <StickyBookDemo />
+
             
             {/* Main Content */}
             <main>

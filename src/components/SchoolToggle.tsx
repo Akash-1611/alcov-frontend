@@ -46,7 +46,7 @@ const SchoolToggle = () => {
   return (
     <motion.section 
       ref={containerRef}
-      className="relative py-32 md:py-48 overflow-hidden sticky top-0 z-30"
+      className="relative py-responsive overflow-hidden"
       style={{ y, scale, opacity }}
     >
       {/* Background with animated effects */}
@@ -69,7 +69,7 @@ const SchoolToggle = () => {
         }}
       />
       
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 container-responsive">
         {/* Enhanced Toggle Buttons */}
         <div className="flex justify-center mb-16">
           <motion.div 
@@ -239,7 +239,7 @@ const SchoolToggle = () => {
               animate={{ opacity: 1, y: 0, clipPath: "inset(0 0% 0 0%)" }}
               exit={{ opacity: 0, y: -40, clipPath: "inset(0 50% 0 50%)" }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="grid lg:grid-cols-2 gap-12 items-center"
+              className="grid lg:grid-cols-2 gap-responsive items-center"
             >
               {/* Left Side - 3D Visual */}
               <motion.div
@@ -361,7 +361,7 @@ const SchoolToggle = () => {
 
                 {/* Heading */}
                 <motion.h2
-                  className="hero-text text-3xl md:text-4xl lg:text-5xl mb-8 leading-tight"
+                  className="hero-text text-responsive-3xl mb-responsive leading-tight"
                 >
                   {content[activeState].heading}
                 </motion.h2>

@@ -57,20 +57,19 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15
+      staggerChildren: 0.1
     }
   }
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 60, rotateY: -15 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    rotateY: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.22, 1, 0.36, 1]
+      duration: 0.5,
+      ease: "easeOut"
     }
   }
 };
@@ -81,38 +80,17 @@ const MeetTheTeam = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-alcovia-darker via-alcovia-black to-alcovia-dark" />
       
-      {/* Animated background orbs */}
-      <motion.div
+      {/* Static background orbs */}
+      <div
         className="absolute top-1/3 left-1/5 w-[500px] h-[500px] rounded-full opacity-15 blur-3xl"
         style={{
           background: 'radial-gradient(circle, hsl(45 100% 55% / 0.3) 0%, transparent 70%)',
         }}
-        animate={{
-          scale: [1, 1.3, 1],
-          x: [0, 80, 0],
-          y: [0, -40, 0]
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
       />
-      <motion.div
+      <div
         className="absolute bottom-1/3 right-1/5 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl"
         style={{
           background: 'radial-gradient(circle, hsl(0 60% 35% / 0.3) 0%, transparent 70%)',
-        }}
-        animate={{
-          scale: [1, 1.4, 1],
-          x: [0, -60, 0],
-          y: [0, 30, 0]
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
         }}
       />
 
@@ -152,9 +130,8 @@ const MeetTheTeam = () => {
               key={member.id}
               variants={cardVariants}
               whileHover={{ 
-                y: -15, 
-                scale: 1.03,
-                rotateY: 5
+                y: -10, 
+                scale: 1.02
               }}
               className="group relative bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl rounded-3xl border-2 border-alcovia-orange/30 hover:border-alcovia-orange/60 transition-all duration-500 overflow-hidden"
               style={{
@@ -162,22 +139,18 @@ const MeetTheTeam = () => {
                 transformStyle: 'preserve-3d'
               }}
             >
-              {/* Animated Background Pattern */}
-              <motion.div
+              {/* Static Background Pattern */}
+              <div
                 className="absolute inset-0 opacity-5"
                 style={{
                   backgroundImage: `radial-gradient(circle at 30% 40%, hsl(45 100% 55% / 0.4) 0%, transparent 50%),
                                    radial-gradient(circle at 70% 60%, hsl(0 60% 35% / 0.3) 0%, transparent 50%)`
                 }}
-                animate={{
-                  backgroundPosition: ['0% 0%', '100% 100%', '0% 0%']
-                }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
 
               {/* Enhanced glow effect on hover */}
-              <motion.div 
-                className="absolute inset-0 rounded-3xl bg-gradient-to-br from-alcovia-orange/15 via-alcovia-red/10 to-alcovia-pink/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              <div 
+                className="absolute inset-0 rounded-3xl bg-gradient-to-br from-alcovia-orange/15 via-alcovia-red/10 to-alcovia-pink/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
 
               {/* Image Container */}
@@ -194,7 +167,7 @@ const MeetTheTeam = () => {
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
-                  <motion.div
+                  <div
                     className="absolute inset-0 bg-gradient-to-t from-alcovia-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </motion.div>
@@ -209,13 +182,11 @@ const MeetTheTeam = () => {
                   >
                     {member.name}
                   </motion.h3>
-                  <motion.p 
+                  <p 
                     className="text-gradient font-display font-semibold text-base"
-                    animate={{ opacity: [0.8, 1, 0.8] }}
-                    transition={{ duration: 3, repeat: Infinity, delay: index * 0.3 }}
                   >
                     {member.role}
-                  </motion.p>
+                  </p>
                 </div>
                 
                 <p className="text-muted-foreground font-body text-sm leading-relaxed">
@@ -252,20 +223,10 @@ const MeetTheTeam = () => {
               </div>
 
               {/* Premium corner decoration */}
-              <motion.div
+              <div
                 className="absolute top-6 right-6 w-4 h-4 rounded-full bg-gradient-to-br from-alcovia-orange to-alcovia-red"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  boxShadow: [
-                    '0 0 10px hsl(45 100% 55% / 0.5)',
-                    '0 0 25px hsl(45 100% 55% / 0.8)',
-                    '0 0 10px hsl(45 100% 55% / 0.5)'
-                  ]
-                }}
-                transition={{
-                  duration: 2.5,
-                  repeat: Infinity,
-                  delay: index * 0.3
+                style={{
+                  boxShadow: '0 0 15px hsl(45 100% 55% / 0.6)'
                 }}
               />
             </motion.div>
