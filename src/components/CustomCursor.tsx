@@ -61,7 +61,7 @@ const CustomCursor = () => {
     <>
       {/* Main cursor - Alcovian with wing */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999]"
+        className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
