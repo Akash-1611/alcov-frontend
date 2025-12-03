@@ -14,25 +14,72 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-alcovia-black via-alcovia-dark to-alcovia-black" />
+      {/* Gradient background with fire theme */}
+      <div className="absolute inset-0 bg-gradient-to-b from-alcovia-black via-alcovia-darker to-alcovia-black" />
       
-      {/* Animated gradient orb */}
+      {/* Multiple animated gradient orbs for depth */}
       <motion.div
-        className="absolute w-[800px] h-[800px] rounded-full opacity-30"
+        className="absolute w-[1000px] h-[1000px] rounded-full opacity-30 blur-3xl"
         style={{
-          background: 'radial-gradient(circle, hsl(68 100% 50% / 0.3) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, hsl(12 100% 60% / 0.4) 0%, hsl(350 89% 60% / 0.2) 40%, transparent 70%)',
           y,
+          left: '10%',
+          top: '20%'
         }}
         animate={{
-          scale: [1, 1.2, 1],
+          scale: [1, 1.3, 1],
+          x: [0, 50, 0],
         }}
         transition={{
-          duration: 8,
+          duration: 10,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       />
+      
+      <motion.div
+        className="absolute w-[800px] h-[800px] rounded-full opacity-25 blur-2xl"
+        style={{
+          background: 'radial-gradient(circle, hsl(350 89% 60% / 0.4) 0%, hsl(340 100% 65% / 0.2) 40%, transparent 70%)',
+          y: useTransform(scrollYProgress, [0, 1], [0, -150]),
+          right: '10%',
+          top: '30%'
+        }}
+        animate={{
+          scale: [1, 1.4, 1],
+          x: [0, -50, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      />
+      
+      {/* Floating particles */}
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 rounded-full"
+          style={{
+            background: i % 3 === 0 ? 'hsl(12 100% 60%)' : i % 3 === 1 ? 'hsl(350 89% 60%)' : 'hsl(340 100% 65%)',
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            opacity: [0, 1, 0],
+            scale: [0, 1.5, 0]
+          }}
+          transition={{
+            duration: 3 + Math.random() * 2,
+            repeat: Infinity,
+            delay: Math.random() * 3,
+            ease: "easeInOut"
+          }}
+        />
+      ))}
 
       {/* Content */}
       <motion.div 
@@ -96,36 +143,114 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator with enhanced glow */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
+        <motion.p
+          className="text-xs tracking-widest text-muted-foreground uppercase mb-1"
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          Scroll
+        </motion.p>
         <motion.div
-          className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center"
-          animate={{ y: [0, 10, 0] }}
+          className="w-6 h-10 border-2 rounded-full flex justify-center relative"
+          style={{
+            borderColor: 'hsl(12 100% 60% / 0.5)',
+            boxShadow: '0 0 20px hsl(12 100% 60% / 0.3)'
+          }}
+          animate={{ 
+            y: [0, 10, 0],
+            boxShadow: [
+              '0 0 20px hsl(12 100% 60% / 0.3)',
+              '0 0 30px hsl(350 89% 60% / 0.5)',
+              '0 0 20px hsl(12 100% 60% / 0.3)'
+            ]
+          }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           <motion.div
-            className="w-1.5 h-3 bg-primary rounded-full mt-2"
-            animate={{ y: [0, 12, 0], opacity: [1, 0, 1] }}
+            className="w-1.5 h-3 rounded-full mt-2"
+            style={{
+              background: 'linear-gradient(to bottom, hsl(12 100% 60%), hsl(350 89% 60%))',
+              boxShadow: '0 0 10px hsl(12 100% 60%)'
+            }}
+            animate={{ 
+              y: [0, 12, 0], 
+              opacity: [1, 0, 1]
+            }}
             transition={{ duration: 2, repeat: Infinity }}
           />
         </motion.div>
       </motion.div>
 
-      {/* Grid overlay */}
+      {/* Grid overlay with orange glow */}
       <div className="absolute inset-0 opacity-5">
         <div className="h-full w-full" style={{
           backgroundImage: `
-            linear-gradient(hsl(68 100% 50% / 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, hsl(68 100% 50% / 0.1) 1px, transparent 1px)
+            linear-gradient(hsl(12 100% 60% / 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, hsl(350 89% 60% / 0.15) 1px, transparent 1px)
           `,
           backgroundSize: '100px 100px'
         }} />
       </div>
+      
+      {/* Animated corner accents */}
+      <motion.div
+        className="absolute top-10 left-10 w-20 h-20 border-l-2 border-t-2 border-alcovia-orange opacity-50"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.3, 0.6, 0.3]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      <motion.div
+        className="absolute top-10 right-10 w-20 h-20 border-r-2 border-t-2 border-alcovia-red opacity-50"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.3, 0.6, 0.3]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 0.5
+        }}
+      />
+      <motion.div
+        className="absolute bottom-10 left-10 w-20 h-20 border-l-2 border-b-2 border-alcovia-deep-orange opacity-50"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.3, 0.6, 0.3]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      />
+      <motion.div
+        className="absolute bottom-10 right-10 w-20 h-20 border-r-2 border-b-2 border-alcovia-pink opacity-50"
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.3, 0.6, 0.3]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.5
+        }}
+      />
     </section>
   );
 };

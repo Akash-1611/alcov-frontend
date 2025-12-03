@@ -1,73 +1,160 @@
-# Welcome to your Lovable project
+# 🔥 Alcovia Ascend - Premium EdTech Experience
 
-## Project info
+A world-class, luxury-brand-level web experience built for Alcovia - Building Future Leaders.
 
-**URL**: https://lovable.dev/projects/1990f5bc-a630-49e6-99aa-da6882ba55c6
+**Now with Premium 3D Parallax Hero, Kid Opening Laptop Animation, and Cinema-Quality Motion Design!**
 
-## How can I edit this code?
+## 🌟 NEW: Premium EdTech Hero
 
-There are several ways of editing your application.
+### **Signature Features:**
+- 🎬 **Kid Opening Laptop Animation** - Cinematic entrance on page load
+- 🖱️ **3D Parallax on Mouse Movement** - Three independent layers with spring physics
+- 🎭 **Split-Image Mask Reveal** - Professional GSAP-powered transitions
+- 💫 **Smooth Text Entrances** - Word-by-word 3D reveals
+- 🌊 **Animated Background Shapes** - Continuously rotating gradient blobs
+- 📊 **Progress UI Card** - Floating glassmorphism dashboard preview
+- 🎯 **Trust & Social Proof** - Animated stats and verification badges
+- 💎 **Neon-Glass CTA** - Premium sticky "Book Demo" button
 
-**Use Lovable**
+**Experience**: Apple × Tesla × Premium EdTech
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1990f5bc-a630-49e6-99aa-da6882ba55c6) and start prompting.
+**Feel**: Luxury brand polish with educational warmth and trust
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## ✨ Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🎨 Design Highlights
+- **Fiery Color Palette**: Vibrant orange (#FF6B35) and red (#E63946) gradients creating an energetic vibe
+- **Custom Alcovian Cursor**: Phoenix-wing animated cursor with particle effects
+- **Smooth Animations**: 60fps animations using Framer Motion
+- **Parallax Effects**: Depth and dimension throughout the experience
+- **Micro-interactions**: Every element responds to user interaction
+- **Premium Typography**: Bold, justified text layouts with dynamic reveals
+- **Glassmorphism**: Modern backdrop blur effects
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🚀 Sections
 
-Follow these steps:
+1. **Hero Section**
+   - Parallax scrolling effects
+   - Animated gradient orbs
+   - Floating fire particles
+   - Dynamic corner accents
+   - Smooth scroll indicator
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+2. **Manifesto Section**
+   - Word-by-word text reveal animations
+   - Interactive offering pills with hover effects
+   - Floating decorative elements
+   - Fire-themed particle system
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+3. **Offerings Grid**
+   - 9 interactive cards with unique icons
+   - 3D hover transformations
+   - Glow effects and shine animations
+   - Staggered entrance animations
 
-# Step 3: Install the necessary dependencies.
-npm i
+4. **School Toggle**
+   - Smooth state transitions with layout animations
+   - Glowing toggle buttons
+   - Mask reveal effects
+   - Animated decorative lines
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+5. **Social Footer**
+   - Fanned card layout
+   - Dramatic hover effects with scale and glow
+   - Gradient backgrounds
+   - Smooth card spreading animation
+
+6. **Loading Screen**
+   - Animated logo with fire effects
+   - Progress bar with gradient
+   - Orbiting fire particles
+   - Circular reveal exit animation
+
+## 🛠️ Tech Stack
+
+- **Framework**: React 18 with TypeScript
+- **Animation**: Framer Motion
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Build Tool**: Vite
+- **State Management**: React Query
+- **Routing**: React Router
+
+## 🎯 Performance
+
+- Optimized animations running at 60fps
+- Lazy loading for optimal performance
+- Responsive design for all screen sizes
+- Smooth scroll implementation
+- Hardware-accelerated transforms
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Color Palette
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Primary Orange**: `hsl(12 100% 60%)` - #FF6B35
+- **Secondary Red**: `hsl(350 89% 60%)` - #E63946
+- **Deep Orange**: `hsl(16 100% 55%)`
+- **Pink Accent**: `hsl(340 100% 65%)`
+- **Background Black**: `hsl(0 0% 4%)`
+- **Dark**: `hsl(0 0% 8%)`
 
-**Use GitHub Codespaces**
+## 🌟 Unique Features
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Phoenix Cursor**: Custom cursor with animated wings that respond to movement
+2. **Fire Particles**: Dynamic particle system throughout the site
+3. **Gradient Animations**: Constantly shifting color gradients
+4. **3D Transforms**: Cards and elements with depth
+5. **Glow Effects**: Premium shadow and glow on interactive elements
+6. **Noise Overlay**: Subtle texture for depth
 
-## What technologies are used for this project?
+## 📱 Responsive Design
 
-This project is built with:
+- Mobile-first approach
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Touch-optimized interactions
+- Adaptive typography
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎭 Animation Philosophy
 
-## How can I deploy this project?
+- **Entrance**: Bold, confident animations
+- **Interaction**: Responsive, immediate feedback
+- **Exit**: Smooth, memorable transitions
+- **Timing**: Carefully choreographed delays and durations
 
-Simply open [Lovable](https://lovable.dev/projects/1990f5bc-a630-49e6-99aa-da6882ba55c6) and click on Share -> Publish.
+## 🔥 What Makes It Memorable
 
-## Can I connect a custom domain to my Lovable project?
+1. **Energy**: High-energy color palette that demands attention
+2. **Motion**: Everything moves with purpose and fluidity
+3. **Depth**: Layered effects create a sense of dimension
+4. **Polish**: Every detail has been considered and refined
+5. **Uniqueness**: Custom cursor and particle effects set it apart
 
-Yes, you can!
+## 🔗 Links
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **GitHub Repository**: [https://github.com/Akash-1611/alcovia-ascend](https://github.com/Akash-1611/alcovia-ascend)
+- **Live Demo**: [Deploy to see live demo](https://github.com/Akash-1611/alcovia-ascend#deployment)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📄 License
+
+Built for Alcovia - Building Future Leaders
+
+---
+
+**Built with 🔥 and ❤️ for Alcovia**

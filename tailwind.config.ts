@@ -52,12 +52,13 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         alcovia: {
-          lime: "hsl(var(--alcovia-lime))",
-          navy: "hsl(var(--alcovia-navy))",
-          gold: "hsl(var(--alcovia-gold))",
+          orange: "hsl(var(--alcovia-orange))",
           red: "hsl(var(--alcovia-red))",
+          'deep-orange': "hsl(var(--alcovia-deep-orange))",
+          pink: "hsl(var(--alcovia-pink))",
           black: "hsl(var(--alcovia-black))",
           dark: "hsl(var(--alcovia-dark))",
+          darker: "hsl(var(--alcovia-darker))",
         },
       },
       borderRadius: {

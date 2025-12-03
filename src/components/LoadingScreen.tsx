@@ -32,20 +32,34 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
         }}
       >
-        {/* Logo animation */}
+        {/* Logo animation with fire effect */}
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8"
+          className="mb-8 relative"
         >
+          {/* Glow orbs behind text */}
+          <motion.div
+            className="absolute inset-0 -z-10 blur-3xl"
+            animate={{
+              background: [
+                'radial-gradient(circle, hsl(45 100% 55% / 0.4) 0%, transparent 70%)',
+                'radial-gradient(circle, hsl(0 60% 35% / 0.5) 0%, transparent 70%)',
+                'radial-gradient(circle, hsl(355 75% 45% / 0.4) 0%, transparent 70%)',
+                'radial-gradient(circle, hsl(45 100% 55% / 0.4) 0%, transparent 70%)'
+              ]
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+          />
+          
           <motion.span 
-            className="text-6xl md:text-8xl font-display font-extrabold text-gradient"
+            className="text-6xl md:text-8xl font-display font-extrabold text-gradient relative"
             animate={{ 
               textShadow: [
-                '0 0 20px hsl(68 100% 50% / 0.3)',
-                '0 0 60px hsl(68 100% 50% / 0.6)',
-                '0 0 20px hsl(68 100% 50% / 0.3)'
+                '0 0 30px hsl(45 100% 55% / 0.5), 0 0 60px hsl(0 60% 35% / 0.3)',
+                '0 0 50px hsl(45 100% 55% / 0.8), 0 0 90px hsl(0 60% 35% / 0.6)',
+                '0 0 30px hsl(45 100% 55% / 0.5), 0 0 60px hsl(0 60% 35% / 0.3)'
               ]
             }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -54,10 +68,25 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           </motion.span>
         </motion.div>
 
-        {/* Progress bar */}
-        <div className="w-64 h-1 bg-muted rounded-full overflow-hidden">
+        {/* Progress bar with gradient */}
+        <div className="w-64 h-1.5 bg-muted rounded-full overflow-hidden relative">
           <motion.div
-            className="h-full bg-primary"
+            className="h-full rounded-full"
+            style={{
+              background: 'linear-gradient(90deg, hsl(45 100% 55%), hsl(0 60% 35%), hsl(355 75% 45%))',
+              boxShadow: '0 0 20px hsl(45 100% 55% / 0.6)'
+            }}
+            initial={{ width: 0 }}
+            animate={{ width: `${Math.min(progress, 100)}%` }}
+            transition={{ duration: 0.1 }}
+          />
+          {/* Glow effect */}
+          <motion.div
+            className="absolute inset-0 rounded-full opacity-50"
+            style={{
+              background: 'linear-gradient(90deg, hsl(45 100% 55% / 0.3), hsl(0 60% 35% / 0.3))',
+              filter: 'blur(8px)'
+            }}
             initial={{ width: 0 }}
             animate={{ width: `${Math.min(progress, 100)}%` }}
             transition={{ duration: 0.1 }}
@@ -73,26 +102,38 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           Building Legacy
         </motion.p>
 
-        {/* Animated particles */}
-        {[...Array(6)].map((_, i) => (
+        {/* Animated fire particles */}
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-primary rounded-full"
+            className="absolute rounded-full"
+            style={{
+              width: `${8 + (i % 3) * 2}px`,
+              height: `${8 + (i % 3) * 2}px`,
+              background: i % 3 === 0 
+                ? 'radial-gradient(circle, hsl(45 100% 55%), hsl(0 60% 35%))' 
+                : i % 3 === 1 
+                ? 'radial-gradient(circle, hsl(0 60% 35%), hsl(355 75% 45%))'
+                : 'radial-gradient(circle, hsl(355 75% 45%), hsl(45 100% 55%))',
+              boxShadow: `0 0 20px ${i % 3 === 0 ? 'hsl(45 100% 55%)' : i % 3 === 1 ? 'hsl(0 60% 35%)' : 'hsl(355 75% 45%)'}`
+            }}
             initial={{ 
               x: 0, 
               y: 0,
-              opacity: 0 
+              opacity: 0,
+              scale: 0
             }}
             animate={{ 
-              x: Math.cos(i * 60 * Math.PI / 180) * 150,
-              y: Math.sin(i * 60 * Math.PI / 180) * 150,
-              opacity: [0, 1, 0]
+              x: Math.cos(i * 45 * Math.PI / 180) * 180,
+              y: Math.sin(i * 45 * Math.PI / 180) * 180,
+              opacity: [0, 1, 0],
+              scale: [0, 1.5, 0]
             }}
             transition={{ 
-              duration: 2,
+              duration: 2.5,
               repeat: Infinity,
-              delay: i * 0.2,
-              ease: "easeInOut"
+              delay: i * 0.15,
+              ease: "easeOut"
             }}
           />
         ))}

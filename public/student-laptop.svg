@@ -1,0 +1,364 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:hsl(45 100% 55%);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:hsl(40 95% 50%);stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Burgundy Gradient -->
+    <linearGradient id="burgundyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:hsl(0 60% 35%);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:hsl(355 75% 45%);stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Skin Tone -->
+    <linearGradient id="skinGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:hsl(25 60% 70%);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:hsl(25 55% 60%);stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow Effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Desk Surface -->
+  <rect x="0" y="450" width="600" height="150" fill="hsl(20 40% 45%)" opacity="0.8"/>
+  <rect x="0" y="450" width="600" height="8" fill="hsl(20 30% 35%)"/>
+
+  <!-- Books on Left -->
+  <g id="books">
+    <rect x="80" y="420" width="50" height="35" rx="2" fill="hsl(200 60% 50%)"/>
+    <rect x="75" y="425" width="50" height="35" rx="2" fill="hsl(45 80% 60%)"/>
+    <line x1="100" y1="420" x2="100" y2="460" stroke="hsl(0 0% 20%)" stroke-width="1" opacity="0.3"/>
+    <line x1="95" y1="425" x2="95" y2="460" stroke="hsl(0 0% 20%)" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <!-- Paper and Pen on Left -->
+  <rect x="150" y="430" width="40" height="30" rx="1" fill="hsl(0 0% 98%)" stroke="hsl(0 0% 80%)" stroke-width="1"/>
+  <line x1="155" y1="435" x2="185" y2="435" stroke="hsl(0 0% 90%)" stroke-width="0.5"/>
+  <line x1="155" y1="440" x2="180" y2="440" stroke="hsl(0 0% 90%)" stroke-width="0.5"/>
+  <line x1="155" y1="445" x2="185" y2="445" stroke="hsl(0 0% 90%)" stroke-width="0.5"/>
+  <rect x="190" y="432" width="3" height="26" rx="1" fill="hsl(200 80% 60%)"/>
+
+  <!-- Cactus on Right -->
+  <g id="cactus">
+    <ellipse cx="480" cy="440" rx="25" ry="8" fill="hsl(100 30% 50%)"/>
+    <ellipse cx="480" cy="420" rx="20" ry="35" fill="hsl(120 50% 45%)"/>
+    <ellipse cx="465" cy="410" rx="12" ry="20" fill="hsl(120 50% 45%)"/>
+    <ellipse cx="495" cy="410" rx="12" ry="20" fill="hsl(120 50% 45%)"/>
+    <circle cx="470" cy="395" r="3" fill="hsl(340 60% 70%)"/>
+    <circle cx="490" cy="395" r="3" fill="hsl(340 60% 70%)"/>
+  </g>
+
+  <!-- Laptop - Facing Us -->
+  <g id="laptop">
+    <!-- Laptop Base -->
+    <rect x="200" y="400" width="200" height="25" rx="3" fill="hsl(0 0% 70%)"/>
+    <rect x="205" y="405" width="190" height="15" rx="2" fill="hsl(0 0% 60%)"/>
+    
+    <!-- Keyboard Keys (simplified) -->
+    <g opacity="0.4">
+      <rect x="215" y="408" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      <rect x="250" y="408" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      <rect x="285" y="408" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      <rect x="320" y="408" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      <rect x="355" y="408" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      
+      <rect x="215" y="413" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      <rect x="250" y="413" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      <rect x="285" y="413" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+      <rect x="320" y="413" width="30" height="3" rx="1" fill="hsl(0 0% 40%)"/>
+    </g>
+    
+    <!-- Trackpad -->
+    <rect x="270" y="415" width="60" height="8" rx="2" fill="hsl(0 0% 50%)"/>
+    
+    <!-- Laptop Screen - Facing Us -->
+    <rect x="200" y="250" width="200" height="150" rx="4" fill="hsl(0 0% 20%)" stroke="hsl(0 0% 30%)" stroke-width="2"/>
+    <rect x="210" y="260" width="180" height="130" rx="2" fill="hsl(0 0% 10%)"/>
+    
+    <!-- Screen Content with Gold Glow -->
+    <rect x="215" y="265" width="170" height="120" rx="2" fill="url(#goldGradient)" opacity="0.15" filter="url(#glow)"/>
+    
+    <!-- Code Lines on Screen -->
+    <g class="screen-content">
+      <rect x="225" y="280" width="120" height="6" rx="1" fill="url(#goldGradient)" opacity="0.5"/>
+      <rect x="225" y="292" width="150" height="6" rx="1" fill="url(#goldGradient)" opacity="0.4"/>
+      <rect x="225" y="304" width="100" height="6" rx="1" fill="url(#burgundyGradient)" opacity="0.4"/>
+      <rect x="225" y="316" width="140" height="6" rx="1" fill="url(#goldGradient)" opacity="0.4"/>
+      <rect x="225" y="328" width="110" height="6" rx="1" fill="url(#goldGradient)" opacity="0.5"/>
+      <rect x="225" y="340" width="130" height="6" rx="1" fill="url(#burgundyGradient)" opacity="0.4"/>
+      <rect x="225" y="352" width="145" height="6" rx="1" fill="url(#goldGradient)" opacity="0.4"/>
+    </g>
+    
+    <!-- Webcam -->
+    <circle cx="300" cy="255" r="2" fill="hsl(0 0% 40%)"/>
+  </g>
+
+  <!-- Student - Sitting Behind Laptop -->
+  <g id="student">
+    <!-- Body/Torso -->
+    <ellipse cx="300" cy="380" rx="60" ry="80" fill="url(#burgundyGradient)"/>
+    <rect x="240" y="340" width="120" height="90" rx="15" fill="url(#burgundyGradient)"/>
+    
+    <!-- Shirt Collar -->
+    <path d="M 270 340 Q 300 350 330 340" stroke="hsl(0 0% 10%)" stroke-width="2" fill="none"/>
+    
+    <!-- Arms -->
+    <!-- Left Arm (on keyboard) -->
+    <ellipse cx="220" cy="370" rx="25" ry="50" fill="url(#burgundyGradient)" transform="rotate(-20 220 370)"/>
+    <!-- Right Arm (on keyboard) -->
+    <ellipse cx="380" cy="370" rx="25" ry="50" fill="url(#burgundyGradient)" transform="rotate(20 380 370)"/>
+    
+    <!-- Hands on Keyboard -->
+    <ellipse cx="210" cy="405" rx="18" ry="12" fill="url(#skinGradient)"/>
+    <ellipse cx="390" cy="405" rx="18" ry="12" fill="url(#skinGradient)"/>
+    
+    <!-- Fingers typing -->
+    <g opacity="0.8">
+      <rect x="205" y="403" width="2" height="6" rx="1" fill="url(#skinGradient)"/>
+      <rect x="208" y="401" width="2" height="8" rx="1" fill="url(#skinGradient)"/>
+      <rect x="211" y="403" width="2" height="6" rx="1" fill="url(#skinGradient)"/>
+      
+      <rect x="387" y="403" width="2" height="6" rx="1" fill="url(#skinGradient)"/>
+      <rect x="390" y="401" width="2" height="8" rx="1" fill="url(#skinGradient)"/>
+      <rect x="393" y="403" width="2" height="6" rx="1" fill="url(#skinGradient)"/>
+    </g>
+    
+    <!-- Neck -->
+    <rect x="285" y="330" width="30" height="20" rx="6" fill="url(#skinGradient)"/>
+    
+    <!-- Head - Peeking Animation -->
+    <g class="head-peek">
+      <ellipse cx="300" cy="300" rx="50" ry="55" fill="url(#skinGradient)">
+        <!-- Animation: moves up (peek) and down (hide) -->
+        <animate attributeName="cy" 
+                 values="320;300;300;300;320" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Hair -->
+      <ellipse cx="300" cy="270" rx="52" ry="38" fill="hsl(0 0% 10%)">
+        <animate attributeName="cy" 
+                 values="290;270;270;270;290" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </ellipse>
+      <path d="M 248 280 Q 255 260 265 275" fill="hsl(0 0% 10%)">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </path>
+      <path d="M 352 280 Q 345 260 335 275" fill="hsl(0 0% 10%)">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Ears -->
+      <ellipse cx="255" cy="305" rx="8" ry="12" fill="url(#skinGradient)">
+        <animate attributeName="cy" 
+                 values="325;305;305;305;325" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="345" cy="305" rx="8" ry="12" fill="url(#skinGradient)">
+        <animate attributeName="cy" 
+                 values="325;305;305;305;325" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </ellipse>
+      
+      <!-- Eyes - Large and Expressive -->
+      <ellipse cx="280" cy="295" rx="10" ry="12" fill="hsl(0 0% 100%)">
+        <animate attributeName="cy" 
+                 values="315;295;295;295;315" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="320" cy="295" rx="10" ry="12" fill="hsl(0 0% 100%)">
+        <animate attributeName="cy" 
+                 values="315;295;295;295;315" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="282" cy="297" r="7" fill="hsl(0 0% 10%)">
+        <animate attributeName="cy" 
+                 values="317;297;297;297;317" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </circle>
+      <circle cx="322" cy="297" r="7" fill="hsl(0 0% 10%)">
+        <animate attributeName="cy" 
+                 values="317;297;297;297;317" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Eye highlights -->
+      <circle cx="283" cy="293" r="3" fill="hsl(0 0% 100%)">
+        <animate attributeName="cy" 
+                 values="313;293;293;293;313" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </circle>
+      <circle cx="323" cy="293" r="3" fill="hsl(0 0% 100%)">
+        <animate attributeName="cy" 
+                 values="313;293;293;293;313" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Small Eyebrows -->
+      <path d="M 270 285 Q 280 282 288 285" stroke="hsl(0 0% 10%)" stroke-width="2" fill="none" stroke-linecap="round">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </path>
+      <path d="M 312 285 Q 320 282 330 285" stroke="hsl(0 0% 10%)" stroke-width="2" fill="none" stroke-linecap="round">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Nose (simple C-shape) -->
+      <path d="M 300 305 Q 295 310 300 315" stroke="hsl(0 0% 10%)" stroke-width="1.5" fill="none" opacity="0.3">
+        <animate attributeName="opacity" 
+                 values="0;0.3;0.3;0.3;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Big Joyful Smile - Wide Open -->
+      <ellipse cx="300" cy="320" rx="25" ry="15" fill="hsl(340 60% 75%)" opacity="0.9">
+        <animate attributeName="cy" 
+                 values="340;320;320;320;340" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+        <animate attributeName="opacity" 
+                 values="0;0.9;0.9;0.9;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </ellipse>
+      <path d="M 275 315 Q 300 325 325 315" stroke="hsl(0 0% 10%)" stroke-width="3" fill="none" stroke-linecap="round">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </path>
+      <!-- Teeth -->
+      <rect x="290" y="318" width="4" height="6" rx="1" fill="hsl(0 0% 100%)">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </rect>
+      <rect x="295" y="318" width="4" height="6" rx="1" fill="hsl(0 0% 100%)">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </rect>
+      <rect x="300" y="318" width="4" height="6" rx="1" fill="hsl(0 0% 100%)">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </rect>
+      <rect x="305" y="318" width="4" height="6" rx="1" fill="hsl(0 0% 100%)">
+        <animate attributeName="opacity" 
+                 values="0;1;1;1;0" 
+                 dur="2s" 
+                 repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Speech Bubble - "Hi!" -->
+  <g class="speech-bubble">
+    <ellipse cx="300" cy="200" rx="40" ry="28" fill="hsl(0 0% 98%)" stroke="hsl(0 0% 80%)" stroke-width="2">
+      <animate attributeName="cy" 
+               values="220;200;200;200;220" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+      <animate attributeName="opacity" 
+               values="0;1;1;1;0" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+    </ellipse>
+    <path d="M 280 228 L 290 245 L 300 228 Z" fill="hsl(0 0% 98%)" stroke="hsl(0 0% 80%)" stroke-width="2">
+      <animate attributeName="opacity" 
+               values="0;1;1;1;0" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+    </path>
+    <text x="300" y="207" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="hsl(0 60% 35%)" text-anchor="middle">
+      Hi!
+      <animate attributeName="opacity" 
+               values="0;1;1;1;0" 
+               dur="2s" 
+               repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Gentle pulse when visible -->
+    <animateTransform
+      attributeName="transform"
+      type="scale"
+      values="1; 1.05; 1"
+      dur="0.5s"
+      repeatCount="indefinite"
+      begin="0.3s"/>
+  </g>
+</svg>
