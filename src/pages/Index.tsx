@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import CustomCursor from '@/components/CustomCursor';
+import SmoothScroll from '@/components/SmoothScroll';
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import ManifestoSection from '@/components/ManifestoSection';
+import OfferingsGrid from '@/components/OfferingsGrid';
+import SchoolToggle from '@/components/SchoolToggle';
+import SocialsFooter from '@/components/SocialsFooter';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <SmoothScroll>
+      <div className="relative min-h-screen bg-background overflow-hidden">
+        {/* Custom Cursor */}
+        <CustomCursor />
+        
+        {/* Noise overlay for texture */}
+        <div className="noise-overlay" />
+        
+        {/* Navigation */}
+        <Navbar />
+        
+        {/* Main Content */}
+        <main>
+          <HeroSection />
+          <ManifestoSection />
+          <OfferingsGrid />
+          <SchoolToggle />
+          <SocialsFooter />
+        </main>
       </div>
-    </div>
+    </SmoothScroll>
   );
 };
 
