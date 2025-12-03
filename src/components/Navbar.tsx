@@ -182,7 +182,7 @@ const Navbar = () => {
             href="https://alcovia.life"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:block px-3 sm:px-4 py-2 rounded-2xl bg-gradient-to-r from-alcovia-orange via-alcovia-red to-alcovia-deep-orange font-semibold text-xs sm:text-sm text-primary-foreground relative overflow-hidden group border border-alcovia-orange/30"
+            className="hidden md:block px-4 py-2 rounded-2xl bg-gradient-to-r from-alcovia-orange via-alcovia-red to-alcovia-deep-orange font-semibold text-sm text-primary-foreground relative overflow-hidden group border border-alcovia-orange/30"
             whileHover={{ scale: 1.05, y: -1 }}
             whileTap={{ scale: 0.95 }}
             style={{

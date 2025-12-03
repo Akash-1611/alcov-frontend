@@ -6,7 +6,7 @@ const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 30, stiffness: 300 };
+  const springConfig = { damping: 25, stiffness: 400 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
@@ -18,42 +18,23 @@ const CustomCursor = () => {
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === 'BUTTON' || 
-          target.tagName === 'A' || 
-          target.closest('button') || 
-          target.closest('a') ||
-          target.classList.contains('cursor-pointer') ||
-          getComputedStyle(target).cursor === 'pointer') {
+      if (target.tagName === 'BUTTON' || target.tagName === 'A' || target.closest('button') || target.closest('a')) {
         setIsHovering(true);
-      } else {
-        setIsHovering(false);
       }
     };
 
-    const handleMouseLeave = () => {
-      cursorX.set(-100);
-      cursorY.set(-100);
+    const handleMouseOut = () => {
+      setIsHovering(false);
     };
 
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        cursorX.set(-100);
-        cursorY.set(-100);
-      }
-    };
-
-    document.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('blur', handleMouseLeave);
+    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mouseover', handleMouseOver);
+    window.addEventListener('mouseout', handleMouseOut);
 
     return () => {
-      document.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mouseover', handleMouseOver);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('blur', handleMouseLeave);
+      window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('mouseover', handleMouseOver);
+      window.removeEventListener('mouseout', handleMouseOut);
     };
   }, [cursorX, cursorY]);
 
@@ -61,16 +42,14 @@ const CustomCursor = () => {
     <>
       {/* Main cursor - Alcovian with wing */}
       <motion.div
-        className="custom-cursor fixed top-0 left-0 pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%'
         }}
       >
         <motion.div
-          className="relative"
+          className="relative -translate-x-1/2 -translate-y-1/2"
           animate={{
             scale: isHovering ? 1.5 : 1,
           }}
@@ -101,7 +80,7 @@ const CustomCursor = () => {
               </linearGradient>
             </defs>
             
-            {/* Left Wing - Larger and more dramatic */}
+            {/* Left Wing */}
             <motion.path
               d="M25 12 Q 10 15 5 22 Q 2 28 8 32 Q 14 34 18 28 Q 20 24 16 22 Q 12 20 12 24"
               stroke="url(#fireGradient)"
@@ -123,7 +102,7 @@ const CustomCursor = () => {
               }}
             />
             
-            {/* Right Wing - Larger and more dramatic */}
+            {/* Right Wing */}
             <motion.path
               d="M25 12 Q 40 15 45 22 Q 48 28 42 32 Q 36 34 32 28 Q 30 24 34 22 Q 38 20 38 24"
               stroke="url(#fireGradient)"
@@ -145,7 +124,7 @@ const CustomCursor = () => {
               }}
             />
             
-            {/* Center dot - the Alcovian with glow */}
+            {/* Center dot */}
             <motion.circle
               cx="25"
               cy="25"
@@ -171,55 +150,6 @@ const CustomCursor = () => {
               fill="white"
               opacity="0.9"
             />
-            
-            {/* Flame particles */}
-            <motion.circle
-              cx="25"
-              cy="15"
-              r="1.5"
-              fill="hsl(45 100% 60%)"
-              animate={{
-                y: [-5, 5],
-                opacity: [1, 0]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeOut"
-              }}
-            />
-            <motion.circle
-              cx="20"
-              cy="18"
-              r="1"
-              fill="hsl(0 60% 40%)"
-              animate={{
-                y: [-3, 5],
-                opacity: [1, 0]
-              }}
-              transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeOut",
-                delay: 0.3
-              }}
-            />
-            <motion.circle
-              cx="30"
-              cy="18"
-              r="1"
-              fill="hsl(355 75% 50%)"
-              animate={{
-                y: [-3, 5],
-                opacity: [1, 0]
-              }}
-              transition={{
-                duration: 1.8,
-                repeat: Infinity,
-                ease: "easeOut",
-                delay: 0.6
-              }}
-            />
           </svg>
         </motion.div>
       </motion.div>
@@ -228,8 +158,8 @@ const CustomCursor = () => {
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9998]"
         style={{
-          x: useSpring(cursorX, { damping: 40, stiffness: 150 }),
-          y: useSpring(cursorY, { damping: 40, stiffness: 150 }),
+          x: cursorXSpring,
+          y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
         }}

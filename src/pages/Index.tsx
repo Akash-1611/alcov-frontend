@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import CustomCursor from '@/components/CustomCursor';
 import SmoothScroll from '@/components/SmoothScroll';
 import ScrollReveal from '@/components/ScrollReveal';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -44,7 +43,6 @@ const Index = () => {
         <SmoothScroll>
           <div className="relative min-h-screen bg-background overflow-hidden">
             {/* Interactive Elements */}
-            <CustomCursor />
             <FloatingParticles />
             <InteractiveBackground />
             <ScrollProgress />

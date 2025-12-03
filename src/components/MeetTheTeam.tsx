@@ -57,7 +57,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1
+      staggerChildren: 0.15
     }
   }
 };
@@ -68,7 +68,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: "easeOut"
     }
   }
@@ -82,13 +82,13 @@ const MeetTheTeam = () => {
       
       {/* Static background orbs */}
       <div
-        className="absolute top-1/3 left-1/5 w-[500px] h-[500px] rounded-full opacity-15 blur-3xl"
+        className="absolute top-1/3 left-1/5 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl"
         style={{
           background: 'radial-gradient(circle, hsl(45 100% 55% / 0.3) 0%, transparent 70%)',
         }}
       />
       <div
-        className="absolute bottom-1/3 right-1/5 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl"
+        className="absolute bottom-1/3 right-1/5 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl"
         style={{
           background: 'radial-gradient(circle, hsl(0 60% 35% / 0.3) 0%, transparent 70%)',
         }}
@@ -130,7 +130,7 @@ const MeetTheTeam = () => {
               key={member.id}
               variants={cardVariants}
               whileHover={{ 
-                y: -10, 
+                y: -8, 
                 scale: 1.02
               }}
               className="group relative bg-gradient-to-br from-card/80 via-card/60 to-card/40 backdrop-blur-xl rounded-3xl border-2 border-alcovia-orange/30 hover:border-alcovia-orange/60 transition-all duration-500 overflow-hidden"
@@ -149,8 +149,8 @@ const MeetTheTeam = () => {
               />
 
               {/* Enhanced glow effect on hover */}
-              <div 
-                className="absolute inset-0 rounded-3xl bg-gradient-to-br from-alcovia-orange/15 via-alcovia-red/10 to-alcovia-pink/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              <motion.div 
+                className="absolute inset-0 rounded-3xl bg-gradient-to-br from-alcovia-orange/15 via-alcovia-red/10 to-alcovia-pink/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               />
 
               {/* Image Container */}
@@ -167,7 +167,7 @@ const MeetTheTeam = () => {
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
-                  <div
+                  <motion.div
                     className="absolute inset-0 bg-gradient-to-t from-alcovia-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 </motion.div>
@@ -182,9 +182,7 @@ const MeetTheTeam = () => {
                   >
                     {member.name}
                   </motion.h3>
-                  <p 
-                    className="text-gradient font-display font-semibold text-base"
-                  >
+                  <p className="text-gradient font-display font-semibold text-base">
                     {member.role}
                   </p>
                 </div>
@@ -222,13 +220,8 @@ const MeetTheTeam = () => {
                 </div>
               </div>
 
-              {/* Premium corner decoration */}
-              <div
-                className="absolute top-6 right-6 w-4 h-4 rounded-full bg-gradient-to-br from-alcovia-orange to-alcovia-red"
-                style={{
-                  boxShadow: '0 0 15px hsl(45 100% 55% / 0.6)'
-                }}
-              />
+              {/* Static corner decoration */}
+              <div className="absolute top-6 right-6 w-4 h-4 rounded-full bg-gradient-to-br from-alcovia-orange to-alcovia-red" />
             </motion.div>
           ))}
         </motion.div>
