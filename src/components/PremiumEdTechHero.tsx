@@ -113,31 +113,17 @@ const PremiumEdTechHero = () => {
         ease: 'back.out(2)',
       }, '-=0.3');
 
-      // Continuous floating shapes animation
+      // Reduced floating shapes animation for performance
       gsap.to('.float-shape-1', {
-        y: '-=30',
-        x: '+=20',
-        rotation: '+=360',
-        duration: 20,
+        y: '-=20',
+        duration: 15,
         repeat: -1,
         yoyo: true,
         ease: 'sine.inOut',
       });
 
       gsap.to('.float-shape-2', {
-        y: '+=40',
-        x: '-=30',
-        rotation: '-=360',
-        duration: 25,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut',
-      });
-
-      gsap.to('.float-shape-3', {
-        y: '-=25',
-        x: '-=15',
-        rotation: '+=180',
+        y: '+=25',
         duration: 18,
         repeat: -1,
         yoyo: true,

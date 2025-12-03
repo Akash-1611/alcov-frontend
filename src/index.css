@@ -103,10 +103,23 @@
     min-height: 100vh;
     width: 100%;
     position: relative;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   * {
     cursor: none !important;
+    box-sizing: border-box;
+  }
+
+  /* Performance optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   /* Ensure dark mode by default */
