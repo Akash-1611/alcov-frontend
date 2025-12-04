@@ -111,6 +111,8 @@
     backface-visibility: hidden;
   }
 
+
+
   /* Ensure dark mode by default */
   html {
     @apply dark;

@@ -10,12 +10,12 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
 
   useEffect(() => {
     lenisRef.current = new Lenis({
-      duration: 1.2,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1,
+      wheelMultiplier: 1.2,
       touchMultiplier: 2,
     });
 

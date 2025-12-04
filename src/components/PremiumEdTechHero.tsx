@@ -15,7 +15,7 @@ const PremiumEdTechHero = () => {
   const mouseY = useMotionValue(0);
 
   // Smooth spring animation for mouse movement
-  const springConfig = { stiffness: 150, damping: 30 };
+  const springConfig = { stiffness: 100, damping: 25 };
   const mouseXSpring = useSpring(mouseX, springConfig);
   const mouseYSpring = useSpring(mouseY, springConfig);
 
@@ -58,60 +58,60 @@ const PremiumEdTechHero = () => {
       // Kid opening laptop animation
       tl.from('.laptop-kid', {
         clipPath: 'inset(0 100% 0 0)',
-        duration: 1.8,
-        ease: 'power4.inOut',
-        delay: 0.3,
+        duration: 1.4,
+        ease: 'power3.inOut',
+        delay: 0.2,
       })
       // Laptop screen glow appears
       .from('.laptop-glow', {
         opacity: 0,
         scale: 0.8,
-        duration: 1,
+        duration: 0.6,
         ease: 'power2.out',
-      }, '-=0.8')
+      }, '-=0.6')
       // Mid-layer UI card entrance
       .from('.mid-layer-card', {
         opacity: 0,
-        y: 100,
-        rotateX: -30,
-        duration: 1.2,
-        ease: 'back.out(1.4)',
+        y: 80,
+        rotateX: -20,
+        duration: 1,
+        ease: 'back.out(1.2)',
       }, '-=0.5')
       // Split mask reveal for hero content
       .from('.hero-mask-left', {
         clipPath: 'inset(0 100% 0 0)',
-        duration: 1.2,
+        duration: 1,
         ease: 'power3.inOut',
-      }, '-=0.8')
+      }, '-=0.7')
       .from('.hero-mask-right', {
         clipPath: 'inset(0 0 0 100%)',
-        duration: 1.2,
+        duration: 1,
         ease: 'power3.inOut',
-      }, '-=1.2')
+      }, '-=1')
       // Headline entrance
       .from('.hero-headline span', {
-        y: 100,
+        y: 80,
         opacity: 0,
-        rotateX: -90,
-        stagger: 0.05,
-        duration: 0.8,
+        rotateX: -60,
+        stagger: 0.04,
+        duration: 0.7,
         ease: 'power3.out',
-      }, '-=0.6')
+      }, '-=0.5')
       // Subheadline soft fade
       .from('.hero-subheadline', {
-        y: 30,
+        y: 20,
         opacity: 0,
-        duration: 1,
+        duration: 0.6,
         ease: 'power2.out',
-      }, '-=0.4')
+      }, '-=0.3')
       // CTA buttons scale in
       .from('.hero-cta', {
-        scale: 0,
+        scale: 0.8,
         opacity: 0,
-        stagger: 0.1,
-        duration: 0.6,
-        ease: 'back.out(2)',
-      }, '-=0.3');
+        stagger: 0.08,
+        duration: 0.4,
+        ease: 'power2.out',
+      }, '-=0.2');
 
       // Continuous floating shapes animation
       gsap.to('.float-shape-1', {
@@ -651,7 +651,7 @@ const PremiumEdTechHero = () => {
 
       {/* Hero Content - Center */}
       <motion.div
-        className="relative z-40 text-center px-4 sm:px-6 w-full max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32 pb-16 sm:pb-24 lg:pb-32"
+        className="relative z-40 text-center px-4 sm:px-6 w-full max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32 pb-[400px] sm:pb-[450px] lg:pb-[500px]"
         style={{
           rotateX: useTransform(rotateX, (val) => val / 3),
           rotateY: useTransform(rotateY, (val) => val / 3),
