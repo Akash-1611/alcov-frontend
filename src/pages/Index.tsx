@@ -80,7 +80,7 @@ const Index = () => {
               </section>
               
               <section id="team">
-                <ScrollReveal variant="elastic" delay={0.4}>
+                <ScrollReveal variant="fade" delay={0.1}>
                   <MeetTheTeam />
                 </ScrollReveal>
               </section>
