@@ -7,8 +7,8 @@ const CustomCursor = () => {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  // Faster but still smooth - no oscillation/bouncing
-  const springConfig = { damping: 40, stiffness: 350, mass: 0.8 };
+  // Ultra-fast and responsive - no oscillation/bouncing
+  const springConfig = { damping: 35, stiffness: 550, mass: 0.5 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
