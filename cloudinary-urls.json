@@ -1,0 +1,25 @@
+{
+  "photos": {
+    "photo-1.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481949/alcovia/photos/photo-1.jpg",
+    "photo-10.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481953/alcovia/photos/photo-10.jpg",
+    "photo-11.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481961/alcovia/photos/photo-11.jpg",
+    "photo-12.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481964/alcovia/photos/photo-12.jpg",
+    "photo-13.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481967/alcovia/photos/photo-13.jpg",
+    "photo-14.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481969/alcovia/photos/photo-14.jpg",
+    "photo-15.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481971/alcovia/photos/photo-15.jpg",
+    "photo-16.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481973/alcovia/photos/photo-16.jpg",
+    "photo-17.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481974/alcovia/photos/photo-17.jpg",
+    "photo-18.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481976/alcovia/photos/photo-18.jpg",
+    "photo-19.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481979/alcovia/photos/photo-19.jpg",
+    "photo-2.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481991/alcovia/photos/photo-2.jpg",
+    "photo-20.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765481993/alcovia/photos/photo-20.jpg",
+    "photo-3.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765482008/alcovia/photos/photo-3.jpg",
+    "photo-4.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765482025/alcovia/photos/photo-4.jpg",
+    "photo-5.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765482035/alcovia/photos/photo-5.jpg",
+    "photo-6.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765482056/alcovia/photos/photo-6.jpg",
+    "photo-7.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765482061/alcovia/photos/photo-7.jpg",
+    "photo-8.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765482065/alcovia/photos/photo-8.jpg",
+    "photo-9.jpg": "https://res.cloudinary.com/dkk6j7jos/image/upload/v1765482069/alcovia/photos/photo-9.jpg"
+  },
+  "videos": {}
+}
