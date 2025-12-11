@@ -583,7 +583,7 @@ const PremiumEdTechHero = () => {
               style={{ transformStyle: 'preserve-3d' }}
             >
               <motion.img 
-                src="/addition/General Website Photos/photo-2.jpg" 
+                src="/addition/General Website Photos/photo-6.jpg" 
                 alt="Alcovia students learning" 
                 className="w-full h-full object-cover rounded-3xl border-4 border-alcovia-orange/40"
                 style={{
